@@ -1,0 +1,9 @@
+questions.txt
+
+Computer Science 50
+Problem Set 3
+
+0. 3 X 3, 5 X 5, 6 X 6, 7 X 7, 8 X 8 and 9 x 9
+1. Arrays 
+2. greet()
+3. init, draw, move, won, clear

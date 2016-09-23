@@ -1,0 +1,17 @@
+0.  an artificial long word said to mean a lung disease caused by inhaling very fine ash and sand dust.
+1.  returns resource usage measures, in our case, for all the calling process
+2.  16
+3.  as calculate checks both pointers aren't NULL, or it returns zero to indicate failure
+
+4.  allocate char array in stack called word with maximum of LENGTH, read each character in c, if it is alpha we store it in its index in word array, if it is numeric we run through the line 
+untill we hit \n then run for again for the next line 
+we check by the same way that word isn't exceeding the array limit, and by the end of them both, index is zeroed to indicate no word was read 
+when index isn't zero, it means word is stored successfully, so it stores \0 to indicate end of the array and run check to check misspelling.
+
+5.  fscanf can't check if char is alpha or numeric to skip it, if word is too long or check spelling of each word
+6.  make sure dictionary file path and the word can't be changed by function
+7.  trie, each node has 28 pointers each one for an alphabetical order except the last 2 pointers 
+for \0 and ' 
+8.  slower 20 times than staff's one, and still
+9.  NOTHING yet
+10. using malloc for stuctures and freeing them gets alot of weird things and faults

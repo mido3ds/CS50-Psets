@@ -1,0 +1,20 @@
+0.  PNG: 16 million colours, JPEG: 16 million, BMP: over 4 billion, GIF: 256 colours
+
+1.  GIF
+2. lossless: returns every single bit after compression, lossy: some bits cannot be recovered after compression and reduces the quality of picture by deleting redundant bits.
+3. Jpeg
+4. first character in file directory entry is changed to indicate it is deleted and could be recycled, file clusters are moved to a list of free clusters
+5. overwrite all blocks with zeroes or ones twice with proper software
+6.  a header file shall declare sets of integer types having specified widths, and shall define corresponding sets of macros
+7. providing integral types with different widths (num of bits) and different ranges (signed and unsigned)
+8.  BYTE: 1, DWORD: 4, WORD: 2, LONG: 4
+9.  type of the bmp
+10. bfSize: The size, in bytes, of the bitmap file, biSize: The number of bytes required by the structure.
+11. If biHeight is negative, the bitmap is a top-down DIB and its origin is the upper-left corne
+12. biBitCount
+13. if the access to the folder was denied and file wasn’t successfully made
+14. to make count = 1, as we want to read one element
+15. 3
+16. changes the indicator position
+17. constant points at indicator’s position
+18. Rick astley
