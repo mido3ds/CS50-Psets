@@ -8,14 +8,16 @@
 #ifndef TF_H
 #define TF_H
 
+#include <iostream>
+
 
 namespace TF {
     class Line {
-        std:string question, explanation;
+        std::string question, explanation;
         char answer;
 
         
-    }
+    };
 }
 
 #endif

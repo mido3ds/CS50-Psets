@@ -16,7 +16,8 @@ enum class ERROR
 {
     READ_FAILURE = 1,
     WRITE_FAILURE = 2,
-    OPEN_FILE_FAILURE = 3
+    OPEN_FILE_FAILURE = 3,
+    BAD_WRITTEN_LINE = 4
 };
 
 #endif

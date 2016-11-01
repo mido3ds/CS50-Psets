@@ -10,6 +10,8 @@
 #include <iostream>
 #include <fstream>
 #include "error.h"
+#include "tf.h"
+#include "symbols.h"
 
 namespace qzm {
 
@@ -26,17 +28,25 @@ namespace qzm {
         return input;
     }
 
-    // detect question type and pass its content to 
-    // question object members
-    // takes a line from file, returns 0 on success 
-    int Detect_Type(std::string &line)
+    // return question type, or exits on failure
+    QUESTIONTYPE Detect_Type(const std::string &line)
     {
+        char sym = line[0];
+
+        if (sym == static_cast<char>(TF::SYMBOL::START) )
+            return TF_Question;
+        else if (sym == static_cast<char>(MC::SYMBOL::START) )
+            return MC_Question; 
+        else if (sym == static_cast<char>(TY::SYMBOL::START) )
+            return TY_Question;
         
-        return SUCCESS;
+        exit(static_cast<int>(ERROR::BAD_WRITTEN_LINE));
     }
 
+
+
+
     // reads file line by line and pases it to Parse
-    // returns zero on success
     int Read(std::ifstream &infile)
     {
         // check file is open
@@ -49,7 +59,34 @@ namespace qzm {
         std::string line;
         while (std::getline(infile, line))
         {
-            //Parse
+            QUESTIONTYPE type = Detect_Type(line);
+            if (type == QUESTIONTYPE::MC_Question)
+            {
+                //
+            }
+            else if (type == QUESTIONTYPE::TF_Question)
+            {
+                using namespace TF;
+                Line line_obj;
+                
+                // get question 
+                for (int i = 0;;i++)
+                {
+                    // read untill end
+                    if (line[i] == static_cast<char>(TF::SYMBOL::END))
+                        break;
+                    
+                    // append the letter 
+                    line_obj.question = std::append()
+                    
+                }
+            }
+            else if (type == QUESTIONTYPE::TY_Question)
+            {
+                //
+            }
+
+            // handle error !!
         }
 
         return SUCCESS;

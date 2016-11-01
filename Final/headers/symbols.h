@@ -9,6 +9,8 @@
 
 #define NEW_LINE '\n'
 
+enum QUESTIONTYPE{TF_Question, MC_Question, TY_Question};
+
 // True or False Question (TF)
 
 /**
