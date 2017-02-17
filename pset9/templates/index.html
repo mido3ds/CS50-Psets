@@ -1,0 +1,39 @@
+{%extends "layout.html"%}
+
+{% block title %}
+    index
+{% endblock %}
+
+{% block main %}
+    <table class="table table-hover">
+        <caption>Stocks</caption>
+        <thread>
+            <th>Stock Symbol</th>
+            <th>Stock Price</th>
+            <th>Num of Shares</th>
+            <th>Total Price</th>
+        </thread>
+
+        {% for symbol in stocks %}
+            <tr>
+                <td>{{symbol}}</td>
+                <td>{{(stocks[symbol]['price'] / stocks[symbol]['num_shares']) | usd}}</td>
+                <td>{{stocks[symbol]['num_shares']}}</td>
+                <td>{{stocks[symbol]['price'] | usd}}</td>
+            </tr>
+        {% endfor %}
+
+        {% if stocks | length == 0 %}
+            <tr>
+                <td>None</td>
+                <td>None</td>
+                <td>None</td>
+                <td>None</td>
+            </tr>
+        {% endif %}
+    </table>
+
+    <br><h3>Total:</h3><br>
+    Cash: {{cash | usd}}<br>
+    Grand Cash: {{grand_total | usd}}<br>
+{% endblock %}

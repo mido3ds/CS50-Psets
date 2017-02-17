@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell Stocks
+{% endblock %}
+
+{% block main %}
+    {% if stocks | length != 0 %}
+    <form role="form" action="{{url_for('sell')}}" method="POST">
+        <fieldset>
+            <!--select a symbol-->
+            <div class="form-group">
+                <span>Select Stock to sell</span>
+
+                <select class="form-control" name="symbol" id="symbol" autofocus>
+                    {% for symbol, _ in stocks.items() %}
+                        <option value="{{symbol}}" >{{symbol}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <!--select some-->
+            <div class="form-group">
+                <label for="radio">
+                    <input type="radio" name="radioOption" checked value="Select some shares" id="radiobutton1">
+                    Sell number of shares
+                </label>
+            </div>
+
+            <!--number-->
+            <div class="form-group">
+                <span>Number of shares to sell</span>
+
+
+                <input type="text" class="form-control" placeholder="Provide a number" name="num_shares"/>
+            </div>
+
+
+            <!--select all-->
+            <div class="form-group">
+                <label for="radio">
+                    <input type="radio" name="radioOption" value="Select ALL shares" id="radiobutton2">
+                    Sell all shares
+                </label>
+            </div>
+
+            <!--submit-->
+            <div class="form-group">
+                 <button class="btn btn-default" type="submit">Sell!</button>
+            </div>
+
+        </fieldset>
+    </form>
+    {% else %}
+    You don't have Stocks to sell<br><br>
+    {% endif %}
+{% endblock %}

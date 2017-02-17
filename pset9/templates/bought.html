@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %} 
+    Succesfully bought
+{% endblock %}
+
+{% block main %} 
+    <br> You have succesfully bought a stock!<br><br>
+
+    <table class="table table-hover">
+        <caption>Purchase info.</caption>
+
+        <thread>
+            <th>Symbol</th>
+            <th>Price of Stock</th>
+            <th>Num of shares</th>
+            <th>Total Cash</th>
+            <th>User Name</th>
+            <th>Time of purchase</th>
+        </thread>
+
+        <tr>
+            <td>{{symbol}}</td>
+            <td>{{price}}</td>
+            <td>{{num_shares}}</td>
+            <td>{{total_cash}}</td>
+            <td>{{user_name}}</td>
+            <td>{{time}}</td>
+        </tr>
+    </table>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <!--send me sell_rows & buy_rows as lists
+    rows = [
+        {
+            'symbol': str,
+            'price': int,
+            'time': str,
+            'num_shares': int
+        },
+        ..
+    ]-->
+
+    <table class="table table-hover">
+        <caption>Purchase History:<br></caption>
+
+        <thread>
+            <th>Symbol</th>
+            <th>Stock Price</th>
+            <th>Number of shares</th>
+            <th>DateTime</th>
+        </thread>
+
+        
+        {% if  buy_rows | length == 0 %}
+            You did't buy anything<br>
+        {% else %}
+            {% for row in buy_rows %}
+                <!--make one row -->
+                <tr>
+                    <td>{{row['symbol']}}</td>
+                    <td>{{row['stock_price'] | usd}}</td>
+                    <td>{{row['num_shares']}}</td>
+                    <td>{{row['time']}}</td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+
+    </table>
+
+    <table class="table table-hover">
+        <caption>Selling History:<br></caption>
+
+        <thread>
+            <th>Symbol</th>
+            <th>Stock Price</th>
+            <th>Number of shares</th>
+            <th>DateTime</th>
+        </thread>
+
+        {% if  sell_rows | length == 0 %}
+            You did't sell anything<br>
+        {% else %}
+            {% for row in sell_rows %}
+                <!--make one row -->
+                <tr>
+                    <td>{{row['symbol']}}</td>
+                    <td>{{row['stock_price'] | usd}}</td>
+                    <td>{{row['num_shares']}}</td>
+                    <td>{{row['time']}}</td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+
+    </table>
+{% endblock %}
